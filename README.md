@@ -133,7 +133,26 @@ Modify the skills section to reflect your actual skills:
 </div>
 ```
 
-### 4. Update Social Links
+### 4. Set Up Contact Form Email
+
+To make the contact form actually send emails to you, follow these steps:
+
+#### Option A: Formspree (Recommended - Free)
+1. Go to [formspree.io](https://formspree.io) and sign up for a free account
+2. Create a new form and copy your form endpoint URL
+3. In `index.html`, replace `YOUR_FORM_ID` in the form action with your actual Formspree form ID:
+   ```html
+   <form id="contactForm" action="https://formspree.io/f/YOUR_ACTUAL_FORM_ID" method="POST">
+   ```
+4. In your Formspree dashboard, set the email destination to `shannonsikadi@gmail.com`
+
+#### Option B: Netlify Forms (If deploying on Netlify)
+If you're deploying on Netlify, you can use their built-in form handling:
+1. Remove the `action` attribute from the form
+2. Add `data-netlify="true"` to the form tag
+3. Set up form notifications in your Netlify dashboard
+
+### 5. Update Social Links
 
 Replace the placeholder social links with your actual profiles:
 
@@ -149,7 +168,7 @@ Replace the placeholder social links with your actual profiles:
 </div>
 ```
 
-### 5. Customize Colors and Styling
+### 6. Customize Colors and Styling
 
 You can customize the color scheme by modifying the CSS variables in `styles.css`:
 
@@ -165,25 +184,75 @@ You can customize the color scheme by modifying the CSS variables in `styles.css
 
 ## 🚀 Deployment
 
-### Option 1: GitHub Pages (Recommended)
+### Option 1: GitHub Pages with Automated Deployment (Recommended)
 
-1. Create a new repository named `ShannonT20.github.io`
-2. Upload all files to the repository
-3. Go to repository Settings > Pages
-4. Select "Deploy from a branch" and choose "main"
-5. Your portfolio will be available at `https://ShannonT20.github.io`
+Your portfolio is now configured for automatic deployment to GitHub Pages using GitHub Actions!
 
-### Option 2: Netlify
+#### Step 1: Create GitHub Repository
+1. Go to [github.com/new](https://github.com/new)
+2. **Important**: Name the repository exactly: `shannon-t20.github.io`
+   - This naming convention tells GitHub this is a user/organization page
+   - Replace `shannon-t20` with your actual GitHub username if different
+3. Make sure it's **public** (required for GitHub Pages)
+4. Do **NOT** initialize with README, .gitignore, or license
 
-1. Connect your GitHub repository to Netlify
-2. Netlify will automatically deploy your site
-3. You'll get a custom domain like `your-site.netlify.app`
+#### Step 2: Upload Your Code
+```bash
+# Add all files to git
+git add .
 
-### Option 3: Vercel
+# Commit the changes
+git commit -m "Initial portfolio deployment"
 
-1. Import your repository to Vercel
-2. Vercel will automatically deploy your site
-3. You'll get a custom domain like `your-site.vercel.app`
+# Set the remote repository (replace YOUR_USERNAME with your GitHub username)
+git remote add origin https://github.com/YOUR_USERNAME/shannon-t20.github.io.git
+
+# Push to GitHub
+git branch -M main
+git push -u origin main
+```
+
+#### Step 3: Enable GitHub Pages
+1. Go to your repository on GitHub
+2. Click **Settings** tab
+3. Scroll down to **Pages** section
+4. Under **Source**, select **"GitHub Actions"**
+5. The site will automatically deploy and be available at:
+   - `https://YOUR_USERNAME.github.io` (if using shannon-t20.github.io naming)
+   - Or `https://YOUR_USERNAME.github.io/shannon-t20` (if using different naming)
+
+#### Step 4: Custom Domain (Optional)
+If you have a custom domain:
+1. Update the `CNAME` file with your domain: `www.yourdomain.com`
+2. Configure DNS settings with your domain provider
+3. Update the workflow file if needed
+
+#### Automatic Updates
+- Every time you push changes to the `main` branch, GitHub Actions will automatically deploy your site
+- Check the **Actions** tab in your repository to monitor deployment status
+
+### Option 2: Manual GitHub Pages Deployment
+
+If you prefer manual deployment:
+
+1. Go to your repository **Settings** > **Pages**
+2. Select **"Deploy from a branch"**
+3. Choose `main` branch and `/ (root)` folder
+4. Click **Save**
+
+### Option 3: Netlify (Alternative)
+
+1. Go to [netlify.com](https://netlify.com)
+2. Connect your GitHub repository
+3. Netlify will automatically detect and deploy your static site
+4. You'll get a domain like `your-site.netlify.app`
+
+### Option 4: Vercel (Alternative)
+
+1. Go to [vercel.com](https://vercel.com)
+2. Import your GitHub repository
+3. Vercel will automatically deploy your site
+4. You'll get a domain like `your-site.vercel.app`
 
 ## 📱 Mobile Optimization
 
@@ -246,7 +315,8 @@ Add demo videos in the `videos/` directory:
 3. **Content**: Update all text content to reflect your personal information
 4. **Projects**: Add your actual GitHub repository links
 5. **Media Gallery**: Add real screenshots and demo videos for Penjeni.ai
-6. **Contact**: Update contact information and social media links
+6. **Contact Form**: Set up Formspree or Netlify Forms to receive email notifications
+7. **Contact**: Update contact information and social media links
 
 ## 📄 License
 

@@ -65,31 +65,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     // Get form data
     const formData = new FormData(contactForm);
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
     const message = formData.get('message');
-    
+
     // Simple validation
     if (!name || !email || !subject || !message) {
         showNotification('Please fill in all fields', 'error');
         return;
     }
-    
+
     if (!isValidEmail(email)) {
         showNotification('Please enter a valid email address', 'error');
         return;
     }
-    
-    // Simulate form submission
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    contactForm.reset();
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+        // Submit form to Formspree
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showNotification('Sorry, there was an error sending your message. Please try again or contact me directly at shannonsikadi@gmail.com', 'error');
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    }
 });
 
 // Email validation function
@@ -352,6 +378,123 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Project Modal Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Project data for modals
+    const projectData = {
+        'compliance': {
+            title: 'Compliance Management System',
+            description: 'Full-stack enterprise Compliance Management System designed to strengthen regulatory compliance, streamline verification workflows, and ensure data integrity across organizations. Built with TypeScript, FastAPI, PostgreSQL, and React. Developed at Minerva Risk Advisors.',
+            tech: ['TypeScript', 'FastAPI', 'PostgreSQL'],
+            link: null
+        },
+        'crop-disease': {
+            title: 'Maize Plant Disease Detection Starter Notebook',
+            description: 'AI for Crop Health - Diagnosing Maize Plant Diseases in Zimbabwe Using Deep Learning. Maize is the staple crop that sustains millions of Zimbabweans, underpinning both food security and livelihoods across rural and urban communities. Yet, Zimbabwe\'s maize production is persistently threatened by several devastating leaf diseases—primarily Common Rust, Gray Leaf Spot, and Blight—which cause significant yield reductions and economic losses. Developed deep learning models that accurately detect and classify maize diseases from leaf images. This solution provides farmers with real-time, accessible tools to identify diseases before they spread widely, enabling targeted interventions to minimize crop loss.',
+            tech: ['Python', 'PyTorch', 'Computer Vision', 'CNN', 'Deep Learning'],
+            link: 'https://github.com/ShannonT20/CROP-DISEASE-DETECTION-STARTER-NOTEBOOK'
+        },
+        'financial-inclusion': {
+            title: 'Zindi Financial Inclusion in Africa',
+            description: 'Primary competition - Can you predict who in Africa is most likely to have a bank account? Financial inclusion remains one of the main obstacles to economic and human development in Africa. Across Kenya, Rwanda, Tanzania, and Uganda only 9.1 million adults (or 14% of adults) have access to or use a commercial bank account. Created machine learning models to predict which individuals are most likely to have or use a bank account. The solution provides insights into the state of financial inclusion across East African countries and key factors driving individuals\' financial security.',
+            tech: ['Python', 'Machine Learning', 'Data Science', 'Predictive Modeling', 'Classification'],
+            link: 'https://github.com/ShannonT20/Financial-Inclusion'
+        },
+        'house-prediction': {
+            title: 'House Price Prediction Model',
+            description: 'Machine learning regression model for predicting house prices with feature engineering and data preprocessing.',
+            tech: ['Python', 'Jupyter', 'Scikit-learn'],
+            link: 'https://github.com/ShannonT20/House_Prediction_Modelling'
+        },
+        'insurance-prediction': {
+            title: 'Insurance Prediction Challenge',
+            description: 'Primary competition - A learning competition designed for DSN Bootcamp 2019. Recently, there has been an increase in the number of building collapse in Lagos and major cities in Nigeria. Olusola Insurance Company offers building insurance policies that protect against damages from fire, vandalism, flood, or storm. Built predictive models to determine if a building will have an insurance claim during the insured period.',
+            tech: ['Python', 'Machine Learning', 'Classification', 'Risk Assessment', 'Predictive Modeling'],
+            link: 'https://github.com/ShannonT20/first-project-Health-Insurance-Challange'
+        },
+        'soil-prediction': {
+            title: 'Amini Soil Prediction Challenge',
+            description: 'Primary competition - Can you predict nutrient gaps for a more fertile tomorrow? Soil health is fundamental to sustainable agriculture and food security. Key macronutrients (N, P, K) and micronutrients (Ca, Mg) determine soil fertility. This challenge focused on predicting nutrient gaps for maize crops to achieve target yields of 4 tons per hectare across African farms. Built machine learning models to predict availability of 11 essential soil nutrients and calculate gaps required for optimal maize production.',
+            tech: ['Python', 'Machine Learning', 'Earth Observation', 'Agriculture', 'Predictive Modeling'],
+            link: 'https://github.com/ShannonT20/SOIL-GAP-PREDICTION'
+        },
+        'loan-book': {
+            title: 'Loan Book Calculation and Balance Tracker',
+            description: 'Financial modeling program for comprehensive loan book analysis and balance tracking. This automated system takes loan book schedules as input, summarizes monthly data into yearly records, and calculates opening and closing balances for each year. Essential tool for financial institutions and loan portfolio management.',
+            tech: ['Python', 'Financial Modeling', 'Data Analysis', 'Automation', 'Loan Portfolio'],
+            link: 'https://github.com/ShannonT20/loan_book_computations'
+        },
+        'tax-calculation': {
+            title: 'Tax Calculation and Balance Tracker',
+            description: 'Automated tax schedule computation system for quarterly tax payments and balance tracking. This program processes tax schedules as input, calculates quarterly tax payments, and computes opening and closing balances for each period. Essential tool for tax compliance, financial planning, and balance sheet management.',
+            tech: ['Python', 'Financial Analysis', 'Tax Compliance', 'Jupyter Notebook', 'Automation'],
+            link: 'https://github.com/ShannonT20/tax_schedule_computations'
+        },
+        'simple-oop': {
+            title: 'Simple OOP',
+            description: 'Object-oriented programming concepts and implementations in Python.',
+            tech: ['Python', 'OOP', 'Programming'],
+            link: 'https://github.com/ShannonT20/simple-OOP'
+        }
+    };
+
+    // Add click event listeners to project cards
+    document.querySelectorAll('.project-card[data-project]').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const projectKey = card.getAttribute('data-project');
+            const project = projectData[projectKey];
+
+            if (project) {
+                // Populate modal content
+                modalContent.innerHTML = `
+                    <h2>${project.title}</h2>
+                    <p>${project.description}</p>
+                    <div class="project-tech">
+                        ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                    ${project.link ? `
+                        <div class="project-links">
+                            <a href="${project.link}" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    ` : ''}
+                `;
+
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+    });
+
+    // Close modal when clicking the close button
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    });
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    });
+});
+
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
@@ -362,7 +505,7 @@ const loadingStyles = `
     body:not(.loaded) {
         overflow: hidden;
     }
-    
+
     body:not(.loaded)::before {
         content: '';
         position: fixed;
@@ -376,7 +519,7 @@ const loadingStyles = `
         align-items: center;
         justify-content: center;
     }
-    
+
     body:not(.loaded)::after {
         content: 'Loading...';
         position: fixed;

@@ -252,16 +252,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Project cards hover effect
+// Project cards hover effect with enhanced interactions
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
+        // Add cursor pointer style
+        card.style.cursor = 'pointer';
+        
         card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px) scale(1.02)';
+            card.style.transform = 'translateY(-15px) scale(1.02)';
+            card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
+            
+            // Add subtle glow effect
+            const cardImage = card.querySelector('.project-card-image');
+            if (cardImage) {
+                cardImage.style.transform = 'scale(1.05)';
+                cardImage.style.filter = 'brightness(1.1)';
+            }
         });
         
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'translateY(0) scale(1)';
+            card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.08)';
+            
+            const cardImage = card.querySelector('.project-card-image');
+            if (cardImage) {
+                cardImage.style.transform = 'scale(1)';
+                cardImage.style.filter = 'brightness(1)';
+            }
+        });
+        
+        // Add click effect
+        card.addEventListener('mousedown', () => {
+            card.style.transform = 'translateY(-12px) scale(0.98)';
+        });
+        
+        card.addEventListener('mouseup', () => {
+            card.style.transform = 'translateY(-15px) scale(1.02)';
         });
     });
 });

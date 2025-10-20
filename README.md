@@ -7,7 +7,7 @@ A beautiful, modern, and responsive portfolio website showcasing your projects a
 - **Modern Design**: Clean, professional design with gradient backgrounds and smooth animations
 - **Responsive Layout**: Fully responsive design that works on all devices
 - **Interactive Elements**: Smooth scrolling, hover effects, and animated counters
-- **Project Showcase**: Featured section for your Compliance Management System and grid layout for other projects
+- **Project Showcase**: Featured section for your Penjeni.ai with media gallery (screenshots & videos) and grid layout for other projects
 - **Contact Form**: Functional contact form with validation
 - **Mobile Navigation**: Hamburger menu for mobile devices
 - **Performance Optimized**: Fast loading with optimized CSS and JavaScript
@@ -28,6 +28,14 @@ portfolio/
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles and animations
 ├── script.js           # JavaScript functionality
+├── images/             # App screenshots directory
+│   ├── screenshot1.png # Chat interface screenshot
+│   ├── screenshot2.png # Pension calculator screenshot
+│   └── README.md       # Image guidelines
+├── videos/             # Demo videos directory
+│   ├── penjeni-demo.mp4  # Demo video (MP4)
+│   ├── penjeni-demo.webm # Demo video (WebM)
+│   └── README.md       # Video guidelines
 └── README.md           # This file
 ```
 
@@ -61,8 +69,8 @@ Edit the following sections in `index.html`:
 
 ### 2. Update Project Information
 
-#### Featured Project (Compliance Management System)
-Replace the placeholder content with your actual project details:
+#### Featured Project (Penjeni.ai with Media Gallery)
+Replace the placeholder content with your actual project details and add screenshots/videos:
 
 ```html
 <div class="project-content">
@@ -214,13 +222,31 @@ If you need help customizing your portfolio, feel free to:
 3. Adjust CSS styles to match your preferences
 4. Update JavaScript functionality if required
 
+### 6. Add App Screenshots and Videos
+
+For the Penjeni.ai featured project, add your actual media files:
+
+#### Screenshots
+Place high-quality screenshots in the `images/` directory:
+- `images/screenshot1.png` - Chat interface
+- `images/screenshot2.png` - Pension calculator
+- Recommended size: 800x600px, PNG/JPG format
+
+#### Demo Videos
+Add demo videos in the `videos/` directory:
+- `videos/penjeni-demo.mp4` - Main demo video (MP4 format)
+- `videos/penjeni-demo.webm` - Same video in WebM format (for better browser compatibility)
+- Recommended resolution: 1920x1080 (Full HD) or 1280x720 (HD)
+- Duration: 2-5 minutes for optimal viewing
+
 ## 🎨 Customization Tips
 
 1. **Images**: Replace placeholder icons with actual project screenshots
 2. **Colors**: Modify the CSS color scheme to match your brand
 3. **Content**: Update all text content to reflect your personal information
 4. **Projects**: Add your actual GitHub repository links
-5. **Contact**: Update contact information and social media links
+5. **Media Gallery**: Add real screenshots and demo videos for Penjeni.ai
+6. **Contact**: Update contact information and social media links
 
 ## 📄 License
 

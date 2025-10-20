@@ -540,6 +540,62 @@ body {
     border-color: white;
 }
 
+/* Media Gallery Styles */
+.project-media {
+    margin-top: 2rem;
+}
+
+.project-media h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.media-item {
+    text-align: center;
+}
+
+.project-screenshot {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-screenshot:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-video {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.project-video:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.media-item p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

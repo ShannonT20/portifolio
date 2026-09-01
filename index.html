@@ -131,6 +131,14 @@ h2.sec em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-we
   font-family:"JetBrains Mono",monospace}
 .kicker{font-size:12px;color:var(--accent-2);font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 
+/* card links */
+.clink{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:13.2px;
+  color:var(--accent-2);text-decoration:none;font-family:"JetBrains Mono",monospace;
+  border-bottom:1px solid transparent;transition:.2s;padding-bottom:2px}
+.clink:hover{border-bottom-color:var(--accent-2)}
+.clink .arw{transition:transform .2s}
+.clink:hover .arw{transform:translateX(3px)}
+
 /* about */
 .about{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;margin-top:44px;align-items:start}
 @media(max-width:900px){.about{grid-template-columns:1fr;gap:34px}}
@@ -252,7 +260,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
     <div class="stat"><div class="n">#177</div><div class="l">of 17,747 on Zindi</div></div>
     <div class="stat"><div class="n">Top 1%</div><div class="l">Global ranking</div></div>
     <div class="stat"><div class="n">5 yrs</div><div class="l">Hands-on AI &amp; ML</div></div>
-    <div class="stat"><div class="n">500+</div><div class="l">Hackathon participants led</div></div>
+    <div class="stat"><div class="n">Top 12</div><div class="l">ITU Data Hackathon, world</div></div>
   </div>
 </header>
 
@@ -297,7 +305,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
 
     <div class="tl-item hot reveal">
       <div class="tl-year">2025 - Present</div>
-      <h3>AI Hackathon Lead</h3>
+      <h3>AI Hackathon Lead &amp; Co-organiser</h3>
       <div class="tl-org">Deep Learning IndabaX Zimbabwe</div>
       <ul>
         <li>Design, organise and run national AI hackathons end to end: problem framing, data preparation, platform setup, participant support and judging.</li>
@@ -358,7 +366,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="tl-org">Independent and applied projects</div>
       <ul>
         <li>Building ACTUNEO, an open-source community-driven actuarial Python library.</li>
-        <li>Authored and published the Zimbabwe Loan Default Prediction Dataset on Zenodo, now used by 450+ people.</li>
+        <li>Authored and published the Zimbabwe Loan Default Prediction Dataset on Zenodo, now used by 490+ people.</li>
         <li>Developed an enterprise Compliance Management System in TypeScript with full-stack delivery from data model to interface.</li>
         <li>Automated the Wanamari calculation into the Wanamari Web Calculator using Python and Streamlit.</li>
       </ul>
@@ -387,14 +395,16 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
     <div class="card reveal">
       <div class="kicker">OPEN SOURCE &middot; IN PROGRESS</div>
       <h3>ACTUNEO - Actuarial Python Library</h3>
-      <p>An open-source, community-driven Python library bringing actuarial modelling into a modern, reproducible workflow. Designed to give actuaries and data scientists a shared toolkit for mortality, reserving and risk computation, with a contribution model that lets the African actuarial community shape the roadmap. This is where my actuarial training and my software work meet.</p>
+      <p>An open-source, community-driven Python library bringing actuarial modelling into a modern, reproducible workflow. Designed to give actuaries and data scientists a shared toolkit for mortality, reserving and risk computation, with a contribution model that lets the African actuarial community shape the roadmap. Systems analysis and full-stack build, and where my actuarial training and my software work meet.</p>
+      <a class="clink" href="https://github.com/ShannonT20/ACTUNEO" target="_blank" rel="noopener">View on GitHub <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Python</span><span class="tag">Actuarial science</span><span class="tag">Open source</span><span class="tag">Library design</span></div>
     </div>
 
     <div class="card reveal">
       <div class="kicker">DATA &middot; ZENODO 2026</div>
       <h3>Zimbabwe Loan Default Prediction Dataset</h3>
-      <p>A fully synthetic tabular dataset of 38,932 loan records across 22 columns with a binary default target, calibrated to Zimbabwe-relevant lending patterns using public aggregate statistics including RBZ reports and a probabilistic risk-generation process. Privacy preserving by design, built for education, research, benchmarking and credit-risk prototyping. Published as version 1.0 in June 2026 and downloaded by 450+ people.</p>
+      <p>A fully synthetic tabular dataset of 38,932 loan records across 22 columns with a binary default target, calibrated to Zimbabwe-relevant lending patterns using public aggregate statistics including RBZ reports and a probabilistic risk-generation process. Privacy preserving by design, built for education, research, benchmarking and credit-risk prototyping. Published as version 1.0 in June 2026 and downloaded by 490+ people.</p>
+      <a class="clink" href="https://zenodo.org/records/20569260" target="_blank" rel="noopener">View on Zenodo <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Synthetic data</span><span class="tag">Credit risk</span><span class="tag">Python</span><span class="tag">Open science</span><span class="tag">Zenodo DOI</span></div>
     </div>
 
@@ -402,6 +412,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="kicker">ML &middot; HACKATHON LEAD</div>
       <h3>IndabaX Zimbabwe 2026: Loan Default Prediction</h3>
       <p>Designed and led a national machine learning challenge on loan default risk in Zimbabwe's banking sector, built on the synthetic dataset above. 238 participants and 147 active teams built end-to-end solutions scored on ROC-AUC with precision, recall and F1 as diagnostics, plus an innovation track for connecting models to real banking stacks such as risk dashboards and origination APIs.</p>
+      <a class="clink" href="https://zindi.world/competitions/deep-learning-indabax-zimbabwe-2026-hackathon-ai-for-financial-inclusion-loan-default-prediction-in-zimbabwes-banking-sector" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Credit risk</span><span class="tag">Machine learning</span><span class="tag">ROC-AUC</span><span class="tag">Financial inclusion</span></div>
     </div>
 
@@ -416,6 +427,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="kicker">COMPUTER VISION &middot; HACKATHON LEAD</div>
       <h3>Maize Crop Disease Detection Challenge</h3>
       <p>A $500 USD image classification challenge for precision agriculture in Zimbabwe, distinguishing Common Rust, Gray Leaf Spot, Blight and healthy maize leaves. Framed for real conditions: accurate under varying lighting, angles and image quality, and light enough to run offline on mobile devices for smallholder farmers. 140 participants.</p>
+      <a class="clink" href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Computer vision</span><span class="tag">Image classification</span><span class="tag">Agriculture</span><span class="tag">Edge deployment</span></div>
     </div>
 
@@ -423,6 +435,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="kicker">CYBERSECURITY AI &middot; ORGANISER</div>
       <h3>Face Spoofing Detection Hackathon</h3>
       <p>Organised a multi-modal deep learning challenge on detecting spoofed faces from printed photos, video replays, 3D masks and deepfakes, using colour and depth imagery. Aimed at secure authentication for mobile banking, access control and identity verification in resource-constrained environments. Run with Zindi in partnership with Deep Learning IndabaX Zimbabwe.</p>
+      <a class="clink" href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Deep learning</span><span class="tag">Multi-modal</span><span class="tag">Cybersecurity</span><span class="tag">Biometrics</span></div>
     </div>
 
@@ -470,6 +483,14 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
   <h2 class="sec">Recognised for <em>building and winning</em>.</h2>
   <div class="grid g2">
 
+    <div class="card reveal" style="grid-column:1/-1;border-color:var(--line-2)">
+      <div class="kicker">2026 &middot; INTERNATIONAL TELECOMMUNICATION UNION &middot; TOP 12 IN THE WORLD</div>
+      <h3>ITU Data Hackathon: Bridging the Digital Divide by Uncovering Digital Deserts</h3>
+      <p>Selected as one of the <strong>top 12 teams in the world</strong> for the on-site final phase of the ITU Data Hackathon, run by the ITU Telecommunication Development Bureau alongside the World Telecommunication/ICT Indicators Symposium 2026, with the ITU Regional Office for Asia and the Pacific, the Area Office for South Asia and Innovation Centre in New Delhi, and financial support from the European Union.</p>
+      <p>The challenge was to mobilise data analysis to find connectivity gaps and the subpopulations left behind on the path to universal and meaningful connectivity: identifying geographical areas with limited connectivity and giving policymakers a typology to target, profiling populations excluded by infrastructure, service quality, affordability or skills, and combining country-level, geospatial, infrastructure, crowdsourced speed-test, demographic and household-survey data through advanced inference methods. Teams delivered maps, dashboards and policy recommendations with reproducible Python notebooks, judged on diversity of data sources, technical processing, documentation and the pitch to the jury.</p>
+      <div class="tags"><span class="tag">Geospatial analysis</span><span class="tag">Data storytelling</span><span class="tag">Policy</span><span class="tag">Python</span><span class="tag">Digital inclusion</span></div>
+    </div>
+
     <div class="card reveal">
       <div class="kicker">AUG 2026 &middot; CASSAVA AI x DEEP LEARNING INDABA</div>
       <h3>Winner, Cassava Root Cause Analysis Challenge</h3>
@@ -478,7 +499,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
 
     <div class="card reveal">
       <div class="kicker">AUG 2025 &middot; DEEP LEARNING INDABAX ZIMBABWE</div>
-      <h3>AI Hackathon Lead</h3>
+      <h3>AI Hackathon Lead &amp; Co-organiser</h3>
       <p>Recognised for leading the preparation and coordination of a nationwide AI hackathon with over 150 participants. Associated with WorldQuant University.</p>
     </div>
 
@@ -504,7 +525,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
   <p class="sec-sub">Competitions are only half the work. The other half is making sure more people get to the start line.</p>
   <div class="grid g3">
     <div class="card reveal"><div class="kicker">OLYMPIAD TRAINING</div><h3>NOAI, AOAI and IOAI</h3><p>Trainer for NOAI Zimbabwe 2026 and coach to the national teams. Set and marked the practical AI exam, then ran intensive evening training. Teams placed 4th and 7th in Africa, two students won individual bronze medals, and Zimbabwe's first high school team competed at IOAI 2026 in Astana.</p></div>
-    <div class="card reveal"><div class="kicker">MENTORSHIP</div><h3>Uncommon.org Volunteer Mentor</h3><p>Two years mentoring students into technical careers. Delivered "Breaking into AI and Machine Learning: Tools, Pathways and Real-World Practice" with Zindi, walking students through writing and running code for their very first Zindi submission.</p></div>
+    <div class="card reveal"><div class="kicker">MENTORSHIP</div><h3>Student Mentorship</h3><p>An ongoing invited mentorship role rather than one-off sessions, spanning two years of guiding students into technical careers. Delivered "Breaking into AI and Machine Learning: Tools, Pathways and Real-World Practice" with Zindi, walking students through writing and running code for their very first Zindi submission.</p></div>
     <div class="card reveal"><div class="kicker">ACTUARIAL COMMUNITY</div><h3>University of Zimbabwe Actuarial Society</h3><p>Mentored actuarial students on pairing exams with data science and AI skills, and on how technical capability differentiates an actuarial profile in a market where AI augments rather than replaces professional judgment.</p></div>
   </div>
 </section>
@@ -524,7 +545,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
   <div class="grid g3" style="margin-top:18px">
     <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Zindi Ambassador</h3><p>Selected in 2026 to represent Zindi, Africa's largest data science community, growing participation and mentoring new practitioners.</p></div>
     <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Deep Learning Indaba 2026</h3><p>Selected to attend Africa's largest AI and machine learning gathering in Lagos, Nigeria, and placed 3rd in its flagship hackathon.</p></div>
-    <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Published dataset author</h3><p>Author of the Zimbabwe Loan Default Prediction Dataset on Zenodo, version 1.0, published June 2026 and adopted by 450+ users.</p></div>
+    <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Published dataset author</h3><p>Author of the Zimbabwe Loan Default Prediction Dataset on Zenodo, version 1.0, published June 2026 and adopted by 490+ users.</p></div>
   </div>
 </section>
 

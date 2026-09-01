@@ -1,470 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shannon T20 - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shannon Sikadi - AI Engineer & Applied AI Researcher</title>
+<meta name="description" content="Shannon Sikadi - AI Innovator, Zindi Ambassador (Top 1% globally), Applied AI Researcher building AI systems and data infrastructure for Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080c; --bg-2:#0c0e15; --panel:rgba(255,255,255,.035);
+  --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+  --ink:#f2f4f8; --ink-2:#a9b1c3; --ink-3:#6f7891;
+  --accent:#7c5cff; --accent-2:#22d3a7; --accent-3:#ff8a5c;
+  --glow:0 0 80px rgba(124,92,255,.35);
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(900px 600px at 12% -5%,rgba(124,92,255,.20),transparent 60%),
+    radial-gradient(700px 500px at 95% 8%,rgba(34,211,167,.13),transparent 60%),
+    radial-gradient(800px 700px at 50% 110%,rgba(255,138,92,.09),transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 100% 60% at 50% 0%,#000 20%,transparent 75%);
+          mask-image:radial-gradient(ellipse 100% 60% at 50% 0%,#000 20%,transparent 75%);
+}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 28px}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:600}
+p{margin:0}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.35s ease;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent}
+nav.stuck{background:rgba(7,8,12,.78);border-bottom-color:var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:16px 28px;display:flex;align-items:center;gap:28px}
+.brand{font-weight:600;letter-spacing:-.02em;font-size:15px;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 14px var(--accent-2)}
+.nav-links{margin-left:auto;display:flex;gap:26px}
+.nav-links a{color:var(--ink-2);text-decoration:none;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{padding:9px 18px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;text-decoration:none;transition:.25s}
+.nav-cta:hover{background:var(--ink);color:#07080c;border-color:var(--ink)}
+@media(max-width:860px){.nav-links{display:none}}
+
+/* hero */
+header{padding:170px 0 96px}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid var(--line-2);
+  border-radius:999px;font-size:12.5px;color:var(--ink-2);background:var(--panel);letter-spacing:.02em}
+.pill .live{width:7px;height:7px;border-radius:50%;background:var(--accent-2);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(34,211,167,.5)}50%{opacity:.6;box-shadow:0 0 0 7px rgba(34,211,167,0)}}
+h1.name{font-size:clamp(46px,8.2vw,92px);margin:26px 0 0;font-weight:600}
+h1.name em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;
+  background:linear-gradient(100deg,var(--accent-2),var(--accent) 55%,var(--accent-3));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin-top:20px;font-size:clamp(17px,2.1vw,21px);color:var(--ink-2);max-width:720px}
+.role b{color:var(--ink);font-weight:500}
+.lede{margin-top:22px;max-width:660px;color:var(--ink-3);font-size:16px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;
+  text-decoration:none;font-size:14.5px;font-weight:500;transition:.25s;border:1px solid transparent}
+.btn-p{background:var(--ink);color:#07080c}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(255,255,255,.14)}
+.btn-s{border-color:var(--line-2);color:var(--ink)}
+.btn-s:hover{border-color:var(--ink);background:var(--panel);transform:translateY(-2px)}
+
+/* hero layout with portrait */
+.hero-grid{display:grid;grid-template-columns:1.55fr .8fr;gap:64px;align-items:center}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:44px}}
+.portrait{position:relative;justify-self:end;width:100%;max-width:300px}
+.portrait img{width:100%;display:block;border-radius:20px;border:1px solid var(--line-2);
+  filter:saturate(1.02) contrast(1.03)}
+.portrait::after{content:"";position:absolute;inset:-22px;z-index:-1;border-radius:32px;
+  background:radial-gradient(closest-side,rgba(124,92,255,.4),transparent 72%);filter:blur(26px)}
+.portrait .badge{position:absolute;left:-18px;bottom:20px;background:rgba(10,12,18,.92);
+  border:1px solid var(--line-2);border-radius:12px;padding:9px 14px;font-size:11.5px;
+  font-family:"JetBrains Mono",monospace;color:var(--ink-2);backdrop-filter:blur(8px);white-space:nowrap}
+@media(max-width:940px){.portrait{justify-self:start;max-width:220px}}
+
+/* stat band */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:72px;
+  background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stat{background:#0a0c12;padding:26px 22px}
+.stat .n{font-size:clamp(26px,3.6vw,38px);font-weight:600;letter-spacing:-.03em;
+  background:linear-gradient(120deg,#fff,#9aa4bd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{margin-top:6px;font-size:12.5px;color:var(--ink-3);letter-spacing:.03em;text-transform:uppercase}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:16px}
+h2.sec{font-size:clamp(30px,4.4vw,46px);max-width:760px}
+h2.sec em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;color:var(--ink-2)}
+.sec-sub{margin-top:16px;color:var(--ink-3);max-width:640px}
+.rule{height:1px;background:linear-gradient(90deg,var(--line-2),transparent);margin:0}
+
+/* cards */
+.grid{display:grid;gap:18px;margin-top:44px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:18px;padding:28px;transition:.35s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;opacity:0;transition:.35s;
+  background:radial-gradient(500px 260px at var(--mx,50%) var(--my,0%),rgba(124,92,255,.16),transparent 70%)}
+.card:hover{border-color:var(--line-2);transform:translateY(-4px)}
+.card:hover::before{opacity:1}
+.card > *{position:relative}
+.card h3{font-size:19px}
+.card p{color:var(--ink-2);font-size:14.6px;margin-top:12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.tag{font-size:11.5px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink-3);
+  font-family:"JetBrains Mono",monospace}
+.kicker{font-size:12px;color:var(--accent-2);font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
+
+/* about */
+.about{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;margin-top:44px;align-items:start}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:34px}}
+.about p{color:var(--ink-2);margin-bottom:18px;font-size:16.5px}
+.about p strong{color:var(--ink);font-weight:500}
+.facts{border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line);font-size:14px}
+.fact:last-child{border-bottom:0}
+.fact span:first-child{color:var(--ink-3)}
+.fact span:last-child{text-align:right;color:var(--ink)}
+
+/* timeline */
+.tl{margin-top:48px;border-left:1px solid var(--line);padding-left:0}
+.tl-item{position:relative;padding:0 0 40px 34px}
+.tl-item::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--line-2)}
+.tl-item.hot::before{background:var(--accent-2);border-color:var(--accent-2);box-shadow:0 0 12px var(--accent-2)}
+.tl-year{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--accent-2);letter-spacing:.05em}
+.tl-item h3{margin-top:8px;font-size:18.5px}
+.tl-org{color:var(--ink-3);font-size:13.5px;margin-top:4px}
+.tl-item ul{margin:14px 0 0;padding-left:18px;color:var(--ink-2);font-size:14.6px}
+.tl-item li{margin-bottom:7px}
+
+/* table */
+.tbl-wrap{margin-top:40px;border:1px solid var(--line);border-radius:18px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:14.3px}
+th{text-align:left;padding:15px 20px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+td{padding:15px 20px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:rgba(255,255,255,.02);color:var(--ink)}
+td.rank{font-family:"JetBrains Mono",monospace;color:var(--ink)}
+.medal{color:var(--accent-3);font-weight:600}
+.top{color:var(--accent-2);font-weight:600}
+
+/* certs */
+.cert{display:flex;gap:16px;align-items:flex-start;padding:20px;border:1px solid var(--line);border-radius:14px;transition:.3s}
+.cert:hover{border-color:var(--line-2);background:var(--panel)}
+.cert .ic{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;
+  background:linear-gradient(140deg,rgba(124,92,255,.25),rgba(34,211,167,.18));font-size:17px}
+.cert h4{font-size:15px}
+.cert p{font-size:13px;color:var(--ink-3);margin-top:4px}
+
+/* contact */
+.contact-box{margin-top:48px;border:1px solid var(--line);border-radius:24px;padding:56px 44px;text-align:center;
+  background:linear-gradient(180deg,rgba(124,92,255,.09),rgba(255,255,255,.015))}
+.contact-box h2{font-size:clamp(28px,4.2vw,44px)}
+.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-size:13.5px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Shannon Sikadi</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="highlight">Shannon Tafadzwa Sikadi</span>
-                    </h1>
-                    <h2 class="hero-subtitle">AI Innovation | Full-Stack AI Developer | Business Systems Analyst | Actuarial Science</h2>
-                    <p class="hero-description">
-                        Pioneering first-of-its-kind AI solutions including Penjeni.ai (intelligent pension chatbot). Microsoft Certified Azure AI Engineer with expertise in computer vision, deep learning, and predictive analytics.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                    <div class="profile-info">
-                        <h3>Shannon Tafadzwa Sikadi</h3>
-                        <p>AI Innovation | Full-Stack AI Developer</p>
-                        <div class="social-links">
-                            <a href="https://github.com/ShannonT20" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/shannon-sikadi-9370b3196" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://twitter.com/ShannonT20" target="_blank"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+<nav id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span class="dot"></span>Shannon Sikadi</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#competitions">Competitions</a>
+      <a href="#credentials">Credentials</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>AI Innovation | Full-Stack AI Developer | Business Systems Analyst</h3>
-                    <p>
-                        Pioneered first-of-its-kind AI solutions including Penjeni.ai (intelligent pension chatbot). Full-stack developer of enterprise Compliance Management System using TypeScript,
-                        FastAPI, PostgreSQL, and React with Role-Based Access Control. Microsoft Certified Azure AI Engineer with expertise
-                        in computer vision, deep learning, and predictive analytics. AI Community Leader - Hackathon Lead & Co-Organizer
-                        for Deep Learning IndabaX Zimbabwe 2025. Business-process automation specialist bridging actuarial science with
-                        cutting-edge AI implementation.
-                    </p>
-                    <div class="skills">
-                        <div class="skill-category">
-                            <h4>AI & Machine Learning</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Deep Learning</span>
-                                <span class="skill-tag">Computer Vision</span>
-                                <span class="skill-tag">YOLO</span>
-                                <span class="skill-tag">GAN</span>
-                                <span class="skill-tag">Hugging Face</span>
-                                <span class="skill-tag">Predictive Modeling</span>
-                                <span class="skill-tag">NLP</span>
-                                <span class="skill-tag">Azure AI Services</span>
-                                <span class="skill-tag">Model Deployment</span>
-                                <span class="skill-tag">Feature Engineering</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Programming & Development</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Flask</span>
-                                <span class="skill-tag">FastAPI</span>
-                                <span class="skill-tag">SQLAlchemy</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">R</span>
-                                <span class="skill-tag">RESTful APIs</span>
-                                <span class="skill-tag">Socket.io</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Tailwind CSS</span>
-                                <span class="skill-tag">HTML</span>
-                                <span class="skill-tag">Jupyter Notebooks</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Data Science & Analytics</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Data Analytics</span>
-                                <span class="skill-tag">Data Visualization</span>
-                                <span class="skill-tag">Process Automation</span>
-                                <span class="skill-tag">Statistical Modeling</span>
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">Power BI</span>
-                                <span class="skill-tag">Excel Advanced</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Cloud & DevOps</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Microsoft Azure</span>
-                                <span class="skill-tag">Azure Cognitive Services</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">API Testing</span>
-                                <span class="skill-tag">Postman</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Alembic</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Business & Domain Expertise</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Actuarial Science</span>
-                                <span class="skill-tag">IFRS 17</span>
-                                <span class="skill-tag">Financial Analysis</span>
-                                <span class="skill-tag">Business Analysis</span>
-                                <span class="skill-tag">Digital Transformation</span>
-                                <span class="skill-tag">Compliance</span>
-                                <span class="skill-tag">Risk Management</span>
-                                <span class="skill-tag">Insurance & Banking</span>
-                                <span class="skill-tag">Workflow Optimization</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">4+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">AI and Machine Learning Models Built</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="wrap" id="top">
+<header>
+  <div class="hero-grid">
+    <div>
+      <span class="pill"><span class="live"></span>Zindi Ambassador &middot; Top 1% globally</span>
+      <h1 class="name">AI that works for<br><em>African realities</em>.</h1>
+      <p class="role"><b>Shannon Sikadi</b> - AI Engineer, Applied AI Researcher and Zindi Ambassador with an actuarial science background. I build machine learning systems, open datasets and AI capacity for the places that need them most.</p>
+      <p class="lede">Ranked #177 of 17,747 participants globally on Zindi and #4 of 331 in Zimbabwe. 3rd place at the Cassava Technologies x Deep Learning Indaba Hackathon 2026. AI Hackathon Lead at Deep Learning IndabaX Zimbabwe and Business Systems Analyst at Minerva Risk Advisors.</p>
+      <div class="cta-row">
+        <a class="btn btn-p" href="#work">View my work</a>
+        <a class="btn btn-s" href="#contact">Contact me</a>
+        <a class="btn btn-s" href="https://www.linkedin.com/in/shannon-sikadi-9370b3196" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <figure class="portrait reveal" style="margin:0">
+      <img src="images/shannon.jpg" alt="Shannon Sikadi at the Deep Learning Indaba 2026" loading="eager">
+      <figcaption class="badge">Deep Learning Indaba 2026 &middot; Lagos</figcaption>
+    </figure>
+  </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my recent work</p>
-            </div>
-            
-            <!-- Penjeni.ai - Featured Project -->
-            <div class="project featured-project">
-                <div class="project-image">
-                    <div class="project-placeholder">
-                        <i class="fas fa-robot"></i>
-                        <h4>Penjeni.ai - Intelligent Pension Chatbot</h4>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <div class="project-badge">Featured</div>
-                    <h3 class="project-title">Penjeni.ai - Intelligent Pension Chatbot</h3>
-                    <p class="project-description">
-                        Zimbabwe's first intelligent pension assistance chatbot using advanced NLP and AI to provide comprehensive guidance on pension schemes, benefit calculations, and retirement planning. This innovative solution revolutionizes how citizens interact with pension information, making complex actuarial concepts accessible through conversational AI. Features real-time query processing, multi-language support, and integration with pension fund databases.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">AI/ML</span>
-                        <span class="tech-tag">Conversational AI</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Hugging Face</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-media">
-                        <h4>App Screenshots & Demo Video</h4>
-                        <div class="media-gallery">
-                            <div class="media-item">
-                                <img src="images/screenshot1.png" alt="Penjeni.ai Chat Interface" class="project-screenshot">
-                                <p>Chat Interface</p>
-                            </div>
-                            <div class="media-item">
-                                <img src="images/screenshot2.png" alt="Penjeni.ai Pension Calculator" class="project-screenshot">
-                                <p>Pension Calculator</p>
-                            </div>
-                            <div class="media-item">
-                                <video controls class="project-video">
-                                    <source src="videos/penjeni-demo.mp4" type="video/mp4">
-                                    <source src="videos/penjeni-demo.webm" type="video/webm">
-                                    Your browser does not support the video tag.
-                                </video>
-                                <p>Demo Video</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="stats reveal">
+    <div class="stat"><div class="n">#177</div><div class="l">of 17,747 on Zindi</div></div>
+    <div class="stat"><div class="n">Top 1%</div><div class="l">Global ranking</div></div>
+    <div class="stat"><div class="n">5 yrs</div><div class="l">Hands-on AI &amp; ML</div></div>
+    <div class="stat"><div class="n">450+</div><div class="l">Dataset downloads</div></div>
+  </div>
+</header>
 
-            <!-- Other Projects Grid -->
-            <div class="projects-grid">
+<section id="about">
+  <div class="eyebrow">About</div>
+  <h2 class="sec">From my first hackathon in 2021 to the <em>top 1% globally</em> in 2026.</h2>
+  <div class="about">
+    <div>
+      <p>I am an <strong>AI Innovator and aspiring Applied AI Researcher</strong> working at the intersection of machine learning, data infrastructure and AI governance. My work spans computer vision, natural language processing, large language models and predictive analytics, applied to problems that matter in African markets: credit risk, telecom network reliability, agriculture, financial inclusion and pensions.</p>
+      <p>I have been building hands-on since 2021, starting with community hackathons at Data Science Zimbabwe and progressing to competing, consulting and organising at continental level. In 2026 I became a <strong>Zindi Ambassador</strong>, worked with the Zindi team as a freelance <strong>AI Consultant</strong>, and placed 3rd in the Cassava Technologies x Deep Learning Indaba Hackathon.</p>
+      <p>Beyond models, I care about the layer underneath them. When we could not find loan data for a Zimbabwean hackathon challenge, I designed and published a <strong>synthetic loan default dataset</strong> calibrated to Zimbabwe's lending landscape. It has since been downloaded and used by more than 450 people. Data is the real AI infrastructure, and Africa needs more of it.</p>
+      <p>I also work on the responsible side of the field, holding ITU credentials in <strong>AI governance and AI ethics</strong>, and I coach the next generation as a coach to Zimbabwe's team at the International Olympiad in Artificial Intelligence.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span>Location</span><span>Harare, Zimbabwe</span></div>
+      <div class="fact"><span>Focus</span><span>Applied AI &amp; ML research</span></div>
+      <div class="fact"><span>Experience</span><span>5+ years hands-on (since 2021)</span></div>
+      <div class="fact"><span>Zindi rank</span><span>#177 / 17,747 global</span></div>
+      <div class="fact"><span>Zimbabwe rank</span><span>#4 / 331</span></div>
+      <div class="fact"><span>Driver's licence</span><span>Clean Class Four</span></div>
+      <div class="fact"><span>Availability</span><span>Open to roles</span></div>
+    </div>
+  </div>
+</section>
 
-                <div class="project-card" data-project="compliance">
-                    <div class="project-card-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Compliance Management System</h4>
-                        <p>Full-stack enterprise system for regulatory compliance</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">FastAPI</span>
-                        </div>
-                    </div>
-                </div>
+<section id="experience">
+  <div class="eyebrow">Experience</div>
+  <h2 class="sec">A record of <em>building, competing and leading</em>.</h2>
+  <div class="tl">
 
-                <div class="project-card" data-project="crop-disease">
-                    <div class="project-card-image">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Maize Plant Disease Detection</h4>
-                        <p>AI for Crop Health - Zimbabwe's maize disease detection</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">CNN</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="financial-inclusion">
-                    <div class="project-card-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Financial Inclusion in Africa</h4>
-                        <p>Zindi competition - Bank account access prediction</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">ML</span>
-                            <span class="tech-tag">Classification</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="house-prediction">
-                    <div class="project-card-image">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>House Price Prediction</h4>
-                        <p>Machine learning regression model for real estate</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="insurance-prediction">
-                    <div class="project-card-image">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Insurance Prediction Challenge</h4>
-                        <p>DSN Bootcamp 2019 - Building insurance claims prediction</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">ML</span>
-                            <span class="tech-tag">Risk Assessment</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="soil-prediction">
-                    <div class="project-card-image">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Soil Prediction Challenge</h4>
-                        <p>Amini challenge - Nutrient gaps for maize crops</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Agriculture</span>
-                            <span class="tech-tag">Earth Observation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="loan-book">
-                    <div class="project-card-image">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Loan Book Calculation</h4>
-                        <p>Automated balance tracking for financial institutions</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Financial Modeling</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="tax-calculation">
-                    <div class="project-card-image">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Tax Calculation</h4>
-                        <p>Quarterly tax payment and balance tracking system</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Tax Compliance</span>
-                            <span class="tech-tag">Automation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-project="simple-oop">
-                    <div class="project-card-image">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="project-card-content">
-                        <h4>Simple OOP</h4>
-                        <p>Object-oriented programming concepts in Python</p>
-                        <div class="project-card-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OOP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div id="modal-content">
-                <!-- Modal content will be populated by JavaScript -->
-            </div>
-        </div>
+    <div class="tl-item hot reveal">
+      <div class="tl-year">2026 - Present</div>
+      <h3>Zindi Ambassador</h3>
+      <div class="tl-org">Zindi Africa</div>
+      <ul>
+        <li>Represent Zindi across the Zimbabwean and wider African data science community.</li>
+        <li>Grow participation in competitions, mentor newcomers and run community sessions.</li>
+        <li>Ranked #177 of 17,747 participants globally and #4 of 331 in Zimbabwe.</li>
+      </ul>
     </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's work together on your next project</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>
-                        I'm always interested in new opportunities and exciting projects. 
-                        Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>shannonsikadi@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>(+263) 0785273989</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Harare, Zimbabwe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/ShannonT20" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="tl-item hot reveal">
+      <div class="tl-year">Jun 2026 - Jul 2026</div>
+      <h3>AI Consultant (Freelance)</h3>
+      <div class="tl-org">Zindi &middot; Remote &middot; World Cup Challenge</div>
+      <ul>
+        <li>Organised and cleaned competition data, ensuring it was accurate, structured and ready for use.</li>
+        <li>Contributed to defining the target variable and problem structure so the dataset suited a competition setting.</li>
+        <li>Prepared and validated the final dataset so participants received competition-ready data for effective model development.</li>
+      </ul>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p>&copy; 2025 Shannon Tafadzwa Sikadi. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div class="tl-item reveal">
+      <div class="tl-year">2026</div>
+      <h3>Hackathon Lead &amp; Dataset Author</h3>
+      <div class="tl-org">Deep Learning IndabaX Zimbabwe 2026 AI Hackathon</div>
+      <ul>
+        <li>Led the design of a loan default prediction challenge for the Zimbabwean banking sector.</li>
+        <li>Built a 38,932-record synthetic dataset calibrated to Zimbabwe lending patterns using RBZ and other public aggregates when no suitable public data existed.</li>
+        <li>Published the dataset openly on Zenodo, now used by 450+ students, researchers and practitioners.</li>
+      </ul>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="tl-item reveal">
+      <div class="tl-year">2026</div>
+      <h3>Coach, Team Zimbabwe</h3>
+      <div class="tl-org">International Olympiad in Artificial Intelligence (IOAI) 2026, Astana</div>
+      <ul>
+        <li>Coached Zimbabwe's first high school team representation at the IOAI.</li>
+        <li>Team returned home with medals, including a Level 3 award.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2022 - Present</div>
+      <h3>AI Developer &amp; Machine Learning Practitioner</h3>
+      <div class="tl-org">Independent and applied projects</div>
+      <ul>
+        <li>Built Penjeni.ai, an intelligent pension chatbot using NLP to make pension schemes, benefit calculations and retirement planning accessible in conversation.</li>
+        <li>Developed an enterprise Compliance Management System in TypeScript with full-stack delivery from data model to interface.</li>
+        <li>Building ACTUNEO, an open-source community-driven actuarial Python library.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-year">2021 - 2023</div>
+      <h3>Early competition and community work</h3>
+      <div class="tl-org">Data Science Zimbabwe &middot; Zindi &middot; UmojaHack Africa</div>
+      <ul>
+        <li>First hackathon in 2021 with Data Science Zimbabwe, placing 3rd.</li>
+        <li>UmojaHack Africa 2023 Carbon Dioxide Prediction Challenge: 121 of 309 and first Zindi bronze medal.</li>
+        <li>Consistent competition practice across prediction, computer vision and geospatial problems.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="work">
+  <div class="eyebrow">Selected work</div>
+  <h2 class="sec">Systems, datasets and tools <em>built end to end</em>.</h2>
+  <p class="sec-sub">A selection of projects spanning applied machine learning, open data and production software.</p>
+  <div class="grid g2">
+
+    <div class="card reveal">
+      <div class="kicker">OPEN DATA &middot; ZENODO 2026</div>
+      <h3>Zimbabwe Loan Default Prediction Dataset</h3>
+      <p>A fully synthetic tabular dataset of 38,932 loan records across 22 columns with a binary default target, calibrated to Zimbabwe-relevant lending patterns using public aggregate statistics including RBZ reports and a probabilistic risk-generation process. Privacy preserving by design, built for education, research, benchmarking and credit-risk prototyping. Used as the challenge dataset for the Deep Learning IndabaX Zimbabwe 2026 hackathon and downloaded by 450+ people.</p>
+      <div class="tags"><span class="tag">Synthetic data</span><span class="tag">Credit risk</span><span class="tag">Python</span><span class="tag">Open science</span><span class="tag">DOI published</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="kicker">OPEN SOURCE &middot; IN PROGRESS</div>
+      <h3>ACTUNEO - Actuarial Python Library</h3>
+      <p>An open-source, community-driven Python library bringing actuarial modelling into a modern, reproducible workflow. Designed to give actuaries and data scientists a shared toolkit for mortality, reserving and risk computation, with a contribution model that lets the African actuarial community shape the roadmap.</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Actuarial science</span><span class="tag">Open source</span><span class="tag">Library design</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="kicker">APPLIED NLP</div>
+      <h3>Penjeni.ai - Intelligent Pension Chatbot</h3>
+      <p>Zimbabwe's first intelligent pension assistance chatbot, using NLP and conversational AI to guide users through pension schemes, benefit calculations and retirement planning. Makes complex actuarial concepts accessible through natural conversation, with real-time query processing and integration against pension fund data.</p>
+      <div class="tags"><span class="tag">NLP</span><span class="tag">LLM</span><span class="tag">Conversational AI</span><span class="tag">FinTech</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="kicker">TELECOM AI &middot; 3RD PLACE</div>
+      <h3>Cassava AI Root Cause Detective</h3>
+      <p>Built a model that reads telecom network logs, alarms, handover failures and configuration drift, and does more than flag anomalies: it identifies the root cause and explains what happened and what to do next. Placed 3rd of 50 ranked participants in a field of 130 AI practitioners from 22 African countries at the Deep Learning Indaba 2026.</p>
+      <div class="tags"><span class="tag">LLMs</span><span class="tag">Root cause analysis</span><span class="tag">Fault detection</span><span class="tag">Edge AI</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="kicker">ENTERPRISE SOFTWARE</div>
+      <h3>Compliance Management System</h3>
+      <p>Full-stack enterprise compliance platform built in TypeScript, covering obligation tracking, evidence management, reporting and audit trails. Designed for regulated environments where traceability and documentation quality determine whether a control actually holds.</p>
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">Full-stack</span><span class="tag">GRC</span><span class="tag">Systems analysis</span></div>
+    </div>
+
+    <div class="card reveal">
+      <div class="kicker">COMPUTER VISION</div>
+      <h3>Cadastral Plan Digitisation</h3>
+      <p>Computer vision and OCR pipeline to identify and digitise information in analog cadastral plans for the Barbados Lands and Surveys Plot Automation Challenge. Ranked 25th of 154 participants in an advanced-tier competition combining geospatial data, document understanding and OCR.</p>
+      <div class="tags"><span class="tag">Computer vision</span><span class="tag">OCR</span><span class="tag">Geospatial</span><span class="tag">Deep learning</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="competitions">
+  <div class="eyebrow">Competition record</div>
+  <h2 class="sec">Measured against <em>17,747 people</em>, publicly.</h2>
+  <p class="sec-sub">Competitive machine learning is where the work gets scored by strangers. A selection of ranked results from 2021 to 2026.</p>
+  <div class="tbl-wrap reveal">
+    <table>
+      <thead><tr><th>Year</th><th>Competition</th><th>Domain</th><th>Rank</th></tr></thead>
+      <tbody>
+        <tr><td>2026</td><td>Cassava AI Root Cause Detective Hackathon</td><td>LLMs, fault detection, edge AI</td><td class="rank medal">3 / 50</td></tr>
+        <tr><td>2026</td><td>Barbados Lands and Surveys Plot Automation Challenge</td><td>Computer vision, OCR, geospatial</td><td class="rank top">25 / 154</td></tr>
+        <tr><td>2026</td><td>GeoAI Aquaculture Pond Identification (FAO &amp; ITU)</td><td>Classification, GIS, agriculture</td><td class="rank">330 / 610</td></tr>
+        <tr><td>2023</td><td>Zindi Financial Inclusion in Africa</td><td>Prediction, financial services</td><td class="rank">422 / 2,708</td></tr>
+        <tr><td>2023</td><td>UmojaHack Africa: Carbon Dioxide Prediction (Beginner)</td><td>Prediction, climate</td><td class="rank medal">121 / 309 &middot; Bronze</td></tr>
+        <tr><td>2022</td><td>PRACTICE Beginner Challenge (air quality, satellite)</td><td>Prediction, earth observation</td><td class="rank top">12 / 106</td></tr>
+        <tr><td>2022</td><td>Insurance Prediction Challenge</td><td>Prediction, insurance</td><td class="rank top">69 / 651</td></tr>
+        <tr><td>2022</td><td>Amini Soil Prediction Challenge</td><td>Earth observation, agriculture</td><td class="rank">224 / 305</td></tr>
+        <tr><td>2021</td><td>Fire Extent Prediction Challenge (Data Science Zimbabwe)</td><td>Prediction, wildfire, environment</td><td class="rank medal">3 / 7</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="eyebrow">Credentials</div>
+  <h2 class="sec">Formal training in <em>AI, data science and governance</em>.</h2>
+  <div class="grid g2">
+    <div class="cert reveal"><div class="ic">&#9878;</div><div><h4>AI Governance: Fundamentals | AI and Data Governance</h4><p>International Telecommunication Union &middot; Issued Jul 2026 &middot; Credential ID c0359d03-b709-494f-9820-2338d7477d41</p></div></div>
+    <div class="cert reveal"><div class="ic">&#127757;</div><div><h4>AI in Practice: Building Ethical, Inclusive and Sustainable Futures</h4><p>International Telecommunication Union &middot; Issued Jun 2026</p></div></div>
+    <div class="cert reveal"><div class="ic">&#128065;</div><div><h4>Applied AI Lab: Deep Learning for Computer Vision</h4><p>WorldQuant University &middot; Dec 2024 - Apr 2025</p></div></div>
+    <div class="cert reveal"><div class="ic">&#128200;</div><div><h4>Applied Data Science Lab</h4><p>WorldQuant University &middot; Sep 2022 - Dec 2022</p></div></div>
+    <div class="cert reveal"><div class="ic">&#9729;</div><div><h4>Microsoft Certified: Azure AI Engineer Associate</h4><p>Microsoft &middot; Cloud AI services, computer vision, NLP and responsible AI</p></div></div>
+    <div class="cert reveal"><div class="ic">&#128663;</div><div><h4>Clean Class Four Driver's Licence</h4><p>Zimbabwe &middot; Valid and clean</p></div></div>
+  </div>
+
+  <div class="grid g3" style="margin-top:18px">
+    <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Zindi Ambassador</h3><p>Selected in 2026 to represent Zindi, Africa's largest data science community, growing participation and mentoring new practitioners.</p></div>
+    <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Deep Learning Indaba 2026</h3><p>Selected to attend Africa's largest AI and machine learning gathering in Lagos, Nigeria, and placed 3rd in its flagship hackathon.</p></div>
+    <div class="card reveal"><div class="kicker">RECOGNITION</div><h3>Published dataset author</h3><p>Author of the Zimbabwe Loan Default Prediction Dataset on Zenodo, version 1.0, published June 2026 and adopted by 450+ users.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-box reveal">
+    <div class="eyebrow" style="text-align:center">Contact</div>
+    <h2 class="sec serif" style="margin:0 auto">Let's build something that matters.</h2>
+    <p class="sec-sub" style="margin:16px auto 0">Open to roles in applied AI, machine learning engineering, AI research and AI policy and governance. Based in Harare, available remotely and on site.</p>
+    <div class="contact-links">
+      <a class="btn btn-p" href="mailto:shannonsikadi@gmail.com">shannonsikadi@gmail.com</a>
+      <a class="btn btn-s" href="tel:+263785273989">+263 78 527 3989</a>
+      <a class="btn btn-s" href="https://www.linkedin.com/in/shannon-sikadi-9370b3196" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-s" href="https://github.com/ShannonT20" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <footer>
+    <span>&copy; 2026 Shannon Sikadi. Harare, Zimbabwe.</span>
+    <span class="mono">AI Engineer &middot; Applied AI Researcher &middot; Zindi Ambassador</span>
+  </footer>
+</section>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>24),{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{
+  const r=c.getBoundingClientRect();
+  c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+  c.style.setProperty('--my',(e.clientY-r.top)+'px');
+}));
+</script>
 </body>
 </html>

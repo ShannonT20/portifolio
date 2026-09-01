@@ -131,6 +131,15 @@ h2.sec em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-we
   font-family:"JetBrains Mono",monospace}
 .kicker{font-size:12px;color:var(--accent-2);font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 
+/* linked cards */
+.card.linked{cursor:pointer}
+.card.linked h3 a{text-decoration:none;background-image:linear-gradient(var(--accent-2),var(--accent-2));
+  background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s}
+.card.linked:hover h3 a{background-size:100% 1px}
+.card.linked h3 .ext{display:inline-block;margin-left:8px;color:var(--accent-2);
+  transition:transform .25s;font-size:.85em}
+.card.linked:hover h3 .ext{transform:translate(3px,-3px)}
+
 /* card links */
 .clink{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:13.2px;
   color:var(--accent-2);text-decoration:none;font-family:"JetBrains Mono",monospace;
@@ -392,25 +401,25 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
   <p class="sec-sub">A selection of projects spanning applied machine learning, open data and production software.</p>
   <div class="grid g2">
 
-    <div class="card reveal">
+    <div class="card reveal linked">
       <div class="kicker">OPEN SOURCE &middot; IN PROGRESS</div>
-      <h3>ACTUNEO - Actuarial Python Library</h3>
+      <h3><a href="https://github.com/ShannonT20/ACTUNEO" target="_blank" rel="noopener">ACTUNEO - Actuarial Python Library<span class="ext">&#8599;</span></a></h3>
       <p>An open-source, community-driven Python library bringing actuarial modelling into a modern, reproducible workflow. Designed to give actuaries and data scientists a shared toolkit for mortality, reserving and risk computation, with a contribution model that lets the African actuarial community shape the roadmap. Systems analysis and full-stack build, and where my actuarial training and my software work meet.</p>
       <a class="clink" href="https://github.com/ShannonT20/ACTUNEO" target="_blank" rel="noopener">View on GitHub <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Python</span><span class="tag">Actuarial science</span><span class="tag">Open source</span><span class="tag">Library design</span></div>
     </div>
 
-    <div class="card reveal">
+    <div class="card reveal linked">
       <div class="kicker">DATA &middot; ZENODO 2026</div>
-      <h3>Zimbabwe Loan Default Prediction Dataset</h3>
+      <h3><a href="https://zenodo.org/records/20569260" target="_blank" rel="noopener">Zimbabwe Loan Default Prediction Dataset<span class="ext">&#8599;</span></a></h3>
       <p>A fully synthetic tabular dataset of 38,932 loan records across 22 columns with a binary default target, calibrated to Zimbabwe-relevant lending patterns using public aggregate statistics including RBZ reports and a probabilistic risk-generation process. Privacy preserving by design, built for education, research, benchmarking and credit-risk prototyping. Published as version 1.0 in June 2026 and downloaded by 490+ people.</p>
       <a class="clink" href="https://zenodo.org/records/20569260" target="_blank" rel="noopener">View on Zenodo <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Synthetic data</span><span class="tag">Credit risk</span><span class="tag">Python</span><span class="tag">Open science</span><span class="tag">Zenodo DOI</span></div>
     </div>
 
-    <div class="card reveal">
+    <div class="card reveal linked">
       <div class="kicker">ML &middot; HACKATHON LEAD</div>
-      <h3>IndabaX Zimbabwe 2026: Loan Default Prediction</h3>
+      <h3><a href="https://zindi.world/competitions/deep-learning-indabax-zimbabwe-2026-hackathon-ai-for-financial-inclusion-loan-default-prediction-in-zimbabwes-banking-sector" target="_blank" rel="noopener">IndabaX Zimbabwe 2026: Loan Default Prediction<span class="ext">&#8599;</span></a></h3>
       <p>Designed and led a national machine learning challenge on loan default risk in Zimbabwe's banking sector, built on the synthetic dataset above. 238 participants and 147 active teams built end-to-end solutions scored on ROC-AUC with precision, recall and F1 as diagnostics, plus an innovation track for connecting models to real banking stacks such as risk dashboards and origination APIs.</p>
       <a class="clink" href="https://zindi.world/competitions/deep-learning-indabax-zimbabwe-2026-hackathon-ai-for-financial-inclusion-loan-default-prediction-in-zimbabwes-banking-sector" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Credit risk</span><span class="tag">Machine learning</span><span class="tag">ROC-AUC</span><span class="tag">Financial inclusion</span></div>
@@ -423,17 +432,17 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="tags"><span class="tag">LLMs</span><span class="tag">Root cause analysis</span><span class="tag">Fault detection</span><span class="tag">Edge AI</span></div>
     </div>
 
-    <div class="card reveal">
+    <div class="card reveal linked">
       <div class="kicker">COMPUTER VISION &middot; HACKATHON LEAD</div>
-      <h3>Maize Crop Disease Detection Challenge</h3>
+      <h3><a href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">Maize Crop Disease Detection Challenge<span class="ext">&#8599;</span></a></h3>
       <p>A $500 USD image classification challenge for precision agriculture in Zimbabwe, distinguishing Common Rust, Gray Leaf Spot, Blight and healthy maize leaves. Framed for real conditions: accurate under varying lighting, angles and image quality, and light enough to run offline on mobile devices for smallholder farmers. 140 participants.</p>
       <a class="clink" href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Computer vision</span><span class="tag">Image classification</span><span class="tag">Agriculture</span><span class="tag">Edge deployment</span></div>
     </div>
 
-    <div class="card reveal">
+    <div class="card reveal linked">
       <div class="kicker">CYBERSECURITY AI &middot; ORGANISER</div>
-      <h3>Face Spoofing Detection Hackathon</h3>
+      <h3><a href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">Face Spoofing Detection Hackathon<span class="ext">&#8599;</span></a></h3>
       <p>Organised a multi-modal deep learning challenge on detecting spoofed faces from printed photos, video replays, 3D masks and deepfakes, using colour and depth imagery. Aimed at secure authentication for mobile banking, access control and identity verification in resource-constrained environments. Run with Zindi in partnership with Deep Learning IndabaX Zimbabwe.</p>
       <a class="clink" href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
       <div class="tags"><span class="tag">Deep learning</span><span class="tag">Multi-modal</span><span class="tag">Cybersecurity</span><span class="tag">Biometrics</span></div>
@@ -630,6 +639,14 @@ if(form){
     }
   });
 }
+
+document.querySelectorAll('.card.linked').forEach(c=>{
+  const href=c.querySelector('h3 a').href;
+  c.addEventListener('click',e=>{
+    if(e.target.closest('a')||getSelection().toString())return;
+    window.open(href,'_blank','noopener');
+  });
+});
 
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{
   const r=c.getBoundingClientRect();

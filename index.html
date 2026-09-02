@@ -141,6 +141,8 @@ h2.sec em{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-we
 .card.linked:hover h3 .ext{transform:translate(3px,-3px)}
 
 /* card links */
+.clinks{display:flex;flex-wrap:wrap;gap:20px;margin-top:18px}
+.clinks .clink{margin-top:0}
 .clink{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:13.2px;
   color:var(--accent-2);text-decoration:none;font-family:"JetBrains Mono",monospace;
   border-bottom:1px solid transparent;transition:.2s;padding-bottom:2px}
@@ -382,7 +384,6 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <ul>
         <li>Building ACTUNEO, an open-source community-driven actuarial Python library.</li>
         <li>Authored and published the Zimbabwe Loan Default Prediction Dataset on Zenodo, now used by 490+ people.</li>
-        <li>Developed an enterprise Compliance Management System in TypeScript with full-stack delivery from data model to interface.</li>
         <li>Automated the Wanamari calculation into the Wanamari Web Calculator using Python and Streamlit.</li>
       </ul>
     </div>
@@ -442,7 +443,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="kicker">COMPUTER VISION &middot; HACKATHON LEAD</div>
       <h3><a href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">Maize Crop Disease Detection Challenge<span class="ext">&#8599;</span></a></h3>
       <p>A $500 USD image classification challenge for precision agriculture in Zimbabwe, distinguishing Common Rust, Gray Leaf Spot, Blight and healthy maize leaves. Framed for real conditions: accurate under varying lighting, angles and image quality, and light enough to run offline on mobile devices for smallholder farmers. 140 participants.</p>
-      <a class="clink" href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
+      <div class="clinks"><a class="clink" href="https://zindi.world/competitions/maize-crop-disease-detection-challenge" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
+      <a class="clink" href="https://github.com/ShannonT20/CROP-DISEASE-DETECTION-STARTER-NOTEBOOK" target="_blank" rel="noopener">View the starter notebook <span class="arw">&rarr;</span></a></div>
       <div class="tags"><span class="tag">Computer vision</span><span class="tag">Image classification</span><span class="tag">Agriculture</span><span class="tag">Edge deployment</span></div>
     </div>
 
@@ -450,15 +452,25 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
       <div class="kicker">CYBERSECURITY AI &middot; ORGANISER</div>
       <h3><a href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">Face Spoofing Detection Hackathon<span class="ext">&#8599;</span></a></h3>
       <p>Organised a multi-modal deep learning challenge on detecting spoofed faces from printed photos, video replays, 3D masks and deepfakes, using colour and depth imagery. Aimed at secure authentication for mobile banking, access control and identity verification in resource-constrained environments. Run with Zindi in partnership with Deep Learning IndabaX Zimbabwe.</p>
-      <a class="clink" href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
+      <div class="clinks"><a class="clink" href="https://zindi.world/competitions/dlx-zimbabwe-hackathon" target="_blank" rel="noopener">View the challenge <span class="arw">&rarr;</span></a>
+      <a class="clink" href="https://github.com/ShannonT20/FaceAnti-Spoofing" target="_blank" rel="noopener">View the code <span class="arw">&rarr;</span></a></div>
       <div class="tags"><span class="tag">Deep learning</span><span class="tag">Multi-modal</span><span class="tag">Cybersecurity</span><span class="tag">Biometrics</span></div>
     </div>
 
-    <div class="card reveal">
-      <div class="kicker">ENTERPRISE SOFTWARE</div>
-      <h3>Compliance Management System</h3>
-      <p>Full-stack enterprise compliance platform built in TypeScript, covering obligation tracking, evidence management, reporting and audit trails. Designed for regulated environments where traceability and documentation quality determine whether a control actually holds.</p>
-      <div class="tags"><span class="tag">TypeScript</span><span class="tag">Full-stack</span><span class="tag">GRC</span><span class="tag">Systems analysis</span></div>
+    <div class="card reveal linked">
+      <div class="kicker">INSURANCE RISK MODELLING</div>
+      <h3><a href="https://github.com/ShannonT20/House_Prediction_Modelling" target="_blank" rel="noopener">Olusola Insurance Building Claim Prediction<span class="ext">&#8599;</span></a></h3>
+      <p>A predictive model estimating the probability that an insured building makes at least one claim over its insured period, built from building characteristics and evaluated on AUC. The problem responds to the rise in building collapses in Lagos and other Nigerian cities, where the policy covers fire, vandalism, flood and storm damage. Set as the Data Science Nigeria 2019 Bootcamp challenge on Zindi, and the closest of my competition work to my actuarial training: pricing and claim likelihood from risk characteristics.</p>
+      <a class="clink" href="https://github.com/ShannonT20/House_Prediction_Modelling" target="_blank" rel="noopener">View the code <span class="arw">&rarr;</span></a>
+      <div class="tags"><span class="tag">Classification</span><span class="tag">AUC</span><span class="tag">Insurance</span><span class="tag">Actuarial</span></div>
+    </div>
+
+    <div class="card reveal linked">
+      <div class="kicker">FINANCIAL INCLUSION</div>
+      <h3><a href="https://github.com/ShannonT20/Financial-Inclusion" target="_blank" rel="noopener">Financial Inclusion Prediction Challenge<span class="ext">&#8599;</span></a></h3>
+      <p>A model predicting which individuals across Kenya, Rwanda, Tanzania and Uganda are most likely to hold or use a bank account, where only around 14% of adults do. Beyond the score, the value is diagnostic: the model surfaces the factors driving financial security, and bank access is what lets households save and businesses build creditworthiness for loans and insurance. Ranked 422 of 2,708 on Zindi.</p>
+      <a class="clink" href="https://github.com/ShannonT20/Financial-Inclusion" target="_blank" rel="noopener">View the code <span class="arw">&rarr;</span></a>
+      <div class="tags"><span class="tag">Prediction</span><span class="tag">Financial services</span><span class="tag">Feature engineering</span><span class="tag">SDG8</span></div>
     </div>
 
     <div class="card reveal">

@@ -563,7 +563,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--ink-3);font-s
     <div class="eyebrow" style="text-align:center">Contact</div>
     <h2 class="sec serif" style="margin:0 auto">Let's build something that matters.</h2>
     <p class="sec-sub" style="margin:16px auto 0">Open to projects and collaboration in applied AI, machine learning engineering, AI research and AI policy and governance. Based in Harare, available remotely and on site.</p>
-<form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form class="form" id="contactForm" action="" method="POST" data-endpoint="" data-email="shannonsikadi@gmail.com">
       <div class="form-row">
         <div class="field">
           <label for="cf-name">Name</label>
@@ -615,13 +615,29 @@ document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(
 const form=document.getElementById('contactForm');
 if(form){
   const btn=document.getElementById('cf-submit'), note=document.getElementById('cf-note');
+  const endpoint=form.dataset.endpoint.trim(), mail=form.dataset.email;
+  const val=n=>form.elements[n].value.trim();
+
   form.addEventListener('submit',async ev=>{
-    if(form.action.includes('YOUR_FORM_ID')) return; // not configured: fall back to normal POST
     ev.preventDefault();
+    if(!form.reportValidity())return;
     note.className='form-note'; note.textContent='';
+
+    // No form service configured yet: hand off to the visitor's email client
+    // with everything prefilled, so a message is never silently lost.
+    if(!endpoint){
+      const body='From: '+val('name')+' <'+val('email')+'>\n\n'+val('message');
+      window.location.href='mailto:'+mail
+        +'?subject='+encodeURIComponent(val('subject'))
+        +'&body='+encodeURIComponent(body);
+      note.className='form-note ok';
+      note.textContent='Opening your email app with the message ready to send.';
+      return;
+    }
+
     btn.disabled=true; btn.textContent='Sending...';
     try{
-      const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+      const r=await fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
       if(r.ok){
         form.reset();
         note.className='form-note ok';
@@ -629,11 +645,11 @@ if(form){
       }else{
         const d=await r.json().catch(()=>({}));
         note.className='form-note err';
-        note.textContent=(d.errors&&d.errors[0]&&d.errors[0].message)||'Something went wrong. Please email me directly at shannonsikadi@gmail.com.';
+        note.textContent=(d.errors&&d.errors[0]&&d.errors[0].message)||'Something went wrong. Please email me directly at '+mail+'.';
       }
     }catch(e){
       note.className='form-note err';
-      note.textContent='Network error. Please email me directly at shannonsikadi@gmail.com.';
+      note.textContent='Network error. Please email me directly at '+mail+'.';
     }finally{
       btn.disabled=false; btn.textContent='Send message';
     }
